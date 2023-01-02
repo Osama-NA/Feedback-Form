@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Feedback Form | Osama Haj-Ali</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADING -->
+      <h1 class="title">Your feedback is <span>appreciated</span>.</h1>
+
+      <!-- TESTIMONIAL FORM -->
+      <form class="testimonial-form">
+        <!-- FORM FIELDS -->
+        <label>Name</label>
+        <input type="text" name="name" required />
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Project Name or Subject</label>
+        <input type="text" name="subject" required />
+        <label>Feedback Message</label>
+        <textarea name="message" required></textarea>
+        <!-- <input type="text" name="approval" hidden="true" /> -->
+
+        <!-- APPROVAL CHECKBOX -->
+        <div class="approval-checkbox">
+          <div class="checkbox">
+            <div class="icon hide">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+
+          <p>
+            I do not approve of my name or email address being shown in Osama's
+            testimonials.
+          </p>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button>Submit Feedback</button>
+
+        <!-- LOADER -->
+        <div class="loader hide"></div>
+      </form>
+
+      <div class="success-tab hide">
+        <div class="message-container">
+          <div class="icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+
+          <p>Feedback submitted successfully</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/f8a4cbb026.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Functionality handler file-->
+    <script src="./main.js" crossorigin="anonymous"></script>
+
+    <!-- EmailJS CDN  -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init(publicKey);
+      })();
+    </script>
+  </body>
+</html>

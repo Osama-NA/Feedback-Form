@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #05151d 25%, #08202c 75%);
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+/* MAIN CONTAINER */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 0 0 10rem;
+}
+
+/* MAIN TITLE */
+.title {
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 4.5rem 0;
+}
+
+.title span {
+  color: #00d1db;
+}
+
+/* TESTIMONIAL FORM */
+.testimonial-form {
+  position: relative;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+  resize: vertical;
+}
+
+.testimonial-form textarea {
+  line-height: 26px;
+  margin-bottom: 1.25rem;
+  min-height: 140px;
+}
+
+.testimonial-form textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.testimonial-form textarea::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #00d1db;
+}
+
+.testimonial-form label {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.approval-checkbox {
+  display: flex;
+  margin-bottom: 2rem;
+
+  /* Disable text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.approval-checkbox p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.approval-checkbox .checkbox {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  min-width: 25px;
+  width: 25px;
+  height: 25px;
+  margin-right: 0.75rem;
+  border: 2px solid #00d1db;
+  border-radius: 5px;
+}
+
+.approval-checkbox .checkbox svg {
+  font-size: 15px;
+}
+
+.testimonial-form button {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #03cad3;
+  background-color: #03cad3;
+  transition: all 0.25s ease-out;
+}
+
+.testimonial-form button:hover {
+  border: 2px solid #03bac4;
+  background-color: #03bac4;
+}
+
+/* LOADER */
+.loader {
+  align-self: center;
+  position: absolute;
+  bottom: -4.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid;
+  border-color: #fff #fff transparent;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 2px solid;
+  border-color: transparent #03cad3 #03cad3;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* SUCCESS MESSAGE TAB */
+.success-tab {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.success-tab .message-container {
+  display: flex;
+  align-items: center;
+  border-radius: 7.5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.success-tab .message-container .icon {
+  background-color: #03cad3;
+  color: #fff;
+  font-size: 20px;
+  padding: 0.75rem;
+}
+
+.success-tab .message-container p {
+  font-weight: 500;
+  padding: 0 1.25rem;
+}
+
+/* INDEPENDENT CSS */
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  /* MAIN CONTAINER */
+  .container {
+    padding: 0 1.25rem 6rem;
+  }
+
+  /* MAIN TITLE */
+  .title {
+    max-width: 22ch;
+    font-size: 20px;
+    margin: 3.5rem 0;
+  }
+
+  /* TESTIMONIAL FORM */
+  .testimonial-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.25rem 1.75rem;
+  }
+
+  .testimonial-form input,
+  .testimonial-form textarea {
+    font-size: 12px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem 0.6rem;
+  }
+
+  .testimonial-form textarea {
+    line-height: 19px;
+    margin-bottom: 1rem;
+    min-height: 115px;
+  }
+
+  .testimonial-form label {
+    font-size: 12px;
+    padding-bottom: 0.25rem;
+  }
+
+  .approval-checkbox {
+    margin-bottom: 1.5rem;
+  }
+
+  .approval-checkbox p {
+    font-size: 12px;
+    line-height: 19px;
+  }
+
+  .approval-checkbox .checkbox {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.6rem;
+  }
+
+  .approval-checkbox .checkbox svg {
+    font-size: 11px;
+    padding-bottom: 2px;
+  }
+
+  .testimonial-form button {
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+  }
+
+  /* LOADER */
+  .loader {
+    bottom: -3.5rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .loader::after {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* SUCCESS MESSAGE TAB */
+  .success-tab .message-container .icon {
+    font-size: 16px;
+  }
+
+  .success-tab .message-container p {
+    font-size: 12px;
+    padding: 0 1.1rem 0.15rem;
+  }
+}
